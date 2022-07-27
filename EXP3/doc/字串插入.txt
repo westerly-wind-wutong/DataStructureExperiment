@@ -1,0 +1,17 @@
+    int InsStr(SqString s,int i, SqString t)    //子串插入
+    {   //将该函数中的代码补齐
+        //DispStr(Concat(Concat(SubStr(s,1,2),t),SubStr(s,2,s.length+1)));
+        SqString r = new SqString();
+        int m;
+        for(m = 0;m<i-1;m++)
+            r.data[m]=s.data[m];
+        r.length=i-1;
+        for(int n = 0;n<t.length;n++)
+            r.data[m+n]=t.data[n];
+        r.length+=t.length;
+        for (int p = 0;p<s.length-i+1;p++)
+            r.data[r.length+p]=s.data[i-1+p];
+        r.length=s.length+t.length;
+        DispStr(r);
+        return 0;
+    }
